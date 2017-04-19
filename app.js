@@ -1,5 +1,7 @@
 document.body.addEventListener("keydown", down);
 function down(e) {
+	randomwin = randomize.toString();
+	console.log(randomwin);
 	console.log(e.key);
 	if (e.key == emptyarray[current]) {
 		guessworld[current] = e.key;
@@ -17,10 +19,14 @@ function down(e) {
 		numerrors = errors.toString();
 
 	}
-	if (current == guessworld.length) {
-		console.log('success')
-		document.getElementById("word-container").innerHTML = "Correct, "+randomword+" is the correct word! You had "+numerrors +" errors.";
+	if (current >= guessworld.length) {
+		place();
+		if (errors === 0) {
 
+			document.getElementById("word-container").innerHTML = "Correct, "+randomword+" is the correct word! You had 0 letters wrong!";
+		}else{
+			document.getElementById("word-container").innerHTML = "Correct, "+randomword+" is the correct word! You got "+numerrors +" letters wrong.";
+		}	
 	}
 }
 
@@ -32,11 +38,12 @@ var emptyworld = "";
 var guessworld = [];
 var current = 0;
 var errors = 0;
-numerrors ="";
-
+var numerrors ="";
+var randomize = 0;
+var randomwin = "";
 function startGame() {
 	// body...
-	var randomize = 0;
+	randomize = 0;
 	randomize = Math.floor(Math.random() * 2) + 1 ;
 	if (randomize == 1) {
 		randomize = 0;
@@ -65,3 +72,11 @@ function startGame() {
 	console.log(emptyarray);
 }
 startGame();
+
+function place() {
+	if (randomize == 0) {
+	document.getElementById("guesses-container").innerHTML = "<img src='win0.png' id='win'>";
+	}else if (randomize == 1) {
+		document.getElementById("guesses-container").innerHTML ="<img src='win1.png' id='win'>";
+	}
+}

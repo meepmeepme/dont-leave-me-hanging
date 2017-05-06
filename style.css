@@ -1,16 +1,18 @@
 body{
 	align-content: center;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9wffgpsH3FvJ0EWDa1b_ClCj2JML4vQePuGbeG31WlOL35Ie);
 }
 
 #container{
 	text-align: center;
-	background-color: #b19cd9;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9wffgpsH3FvJ0EWDa1b_ClCj2JML4vQePuGbeG31WlOL35Ie);
 	padding-top: 10px;
 	height: 800px;
 	border:solid  5px;
 	border-radius: 10px;	
 	border-color: rgba(	253, 253, 150, .9);
 	font-family: Arkitech;
+	color:white;
 	}
 	@font-face { font-family: Arkitech; src: url('Arkitech.TTF'); }
 #word-container{
